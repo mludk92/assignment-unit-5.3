@@ -35,3 +35,28 @@ function showCollection(arrayOfObjects){
 
 console.log(collection.length)
 console.log(collection[0].title)
+
+// - Add a function named `findByArtist`. This function should:
+//   - Take in `artist` (a string) parameter
+//   - Create an array to hold any results, empty to start
+//   - Loop through the `collection` and add any objects 
+//   with a matching artist to the array.
+//   - Return the array with the matching results. 
+//   If no results are found, return an empty array.
+/**
+ * 
+ * @param {string} nameOfArtist 
+ * @returns 
+ */
+function findByArtist(nameOfArtist){
+    let results = []
+    for(let i in collection){
+        if (nameOfArtist == collection[i].artist){
+            results.push(collection[i])
+        }
+   }
+   return results
+}
+// how can i do this without specifing the Artist as a string?
+findByArtist('Ghost')
+
