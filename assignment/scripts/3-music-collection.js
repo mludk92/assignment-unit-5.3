@@ -60,3 +60,46 @@ function findByArtist(nameOfArtist){
 // how can i do this without specifing the Artist as a string?
 findByArtist('Ghost')
 
+/**
+ * - Create a function called `search`. This function should:
+  - Take an input parameter for a search criteria object.
+  Create your solution based on a search object that has
+   these properties:
+  ```
+  { artist: 'Ray Charles', year: 1957 }
+  ```
+  - The returned output from `search` should meet these 
+  requirements:
+    - Return a new array of all items in the `collection`
+     matching *all* of the search criteria.
+    - If no results are found, return an empty array.
+    - If there is no search object or an empty search 
+    object provided as input, then return all albums 
+    in the `collection`.
+ */
+
+function search(objectToSearch,artist,year){
+    let searchResults = []
+    for(let i in objectToSearch){
+        if(objectToSearch[i].artist== artist && 
+            objectToSearch[i].yearPublished== year){
+                searchResults.push(objectToSearch[i])
+            }
+        if(artist=== null && 
+            year=== null){
+                return objectToSearch
+            }
+    }
+    return searchResults
+}
+console.log(search(collection,'Ghost',2016))
+console.log(search(collection,'Ray Charles',1957))
+console.log(search(collection,null,null))
+//unfortuantly not enough time to finish these this time. 
+/**
+ * was thinking to build a search field which using 
+ * docmument.quearyselector.value to get the search parameters
+ * and then compair to collection. But i was having no luck with this
+ * method, i could never pull the value from the input. 
+ */
+
